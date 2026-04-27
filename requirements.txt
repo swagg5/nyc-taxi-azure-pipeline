@@ -1,0 +1,26 @@
+# requirements.txt
+# NYC Yellow Taxi Pipeline — Python dependencies
+# Pin versions for reproducibility
+
+# Testing
+pytest==8.1.1
+pytest-cov==5.0.0          # Coverage reports
+chispa==0.9.2              # PySpark DataFrame equality assertions
+
+# PySpark (must match Databricks runtime version)
+# Databricks Runtime 15.4 LTS = Spark 3.5.0
+pyspark==3.5.0
+delta-spark==3.2.0         # Delta Lake for local testing
+
+# Airflow (must match Docker image version)
+apache-airflow==3.1.6
+apache-airflow-providers-microsoft-azure==10.1.0
+apache-airflow-providers-databricks==6.5.0
+
+# Azure SDK (for ADLS validation tasks)
+azure-storage-file-datalake==12.15.0
+azure-identity==1.16.0
+
+# Utilities
+python-dateutil==2.9.0
+pandas==2.2.1

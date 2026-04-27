@@ -1,4 +1,42 @@
+# .gitignore — NYC Yellow Taxi Pipeline
+
+# Python
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Secrets — NEVER commit these
 *.key
+*.pem
+.env
+.env.*
+secrets.py
+config_local.py
+
+# Testing
+.pytest_cache/
+coverage.xml
+.coverage
+htmlcov/
+
+# Databricks
+.databricks/
+*.dbc
+
+# Airflow
+airflow/logs/
+airflow/plugins/
+airflow.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

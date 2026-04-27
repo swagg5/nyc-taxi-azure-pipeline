@@ -1,4 +1,12 @@
 # NYC Yellow Taxi — Azure Medallion Batch Pipeline
+
+![CI](https://github.com/swagg5/nyc-taxi-azure-pipeline/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![Spark](https://img.shields.io/badge/spark-3.5.0-orange)
+![Airflow](https://img.shields.io/badge/airflow-3.1.6-green)
+![Delta](https://img.shields.io/badge/delta-3.2.0-red)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 A production-grade batch data pipeline built on Azure, processing 38M+ NYC Yellow Taxi trip records through a Bronze → Silver → Gold medallion architecture.
 ---
 ## Architecture
@@ -65,6 +73,7 @@ NYC TLC (nyc.gov HTTP)
 │ Orchestration   │  Bronze → Silver → Gold chain
 
 └─────────────────┘
+
 Official Website of New York City Government - nyc.gov
 On the homepage of nyc.gov, you can check today's statuses for parking, schools, and trash collection. You can also access popular services, news, and see what's new from NYC government. 
 ---
