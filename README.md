@@ -130,14 +130,19 @@ Cross-layer dependency: Silver only runs after Bronze succeeds. Gold only runs a
 ## Key Design Decisions
 **Why ADF for ingestion only?**
 ADF handles connectivity. Databricks handles computation. Mixing them makes both harder to test and maintain.
+
 **Why Delta Lake over plain Parquet?**
 ACID transactions, schema enforcement, MERGE support, and time travel. Plain Parquet has none of these.
+
 **Why quarantine instead of dropping bad records?**
 Silent drops are unauditable. The quarantine pattern routes bad records to a separate location with a rejection reason — enabling replay, investigation, and quarantine rate monitoring as a data quality KPI.
+
 **Why SCD Type 2 for taxi zones?**
 Historical trips must join to the zone attributes that were current at the time of the trip. SCD Type 1 would corrupt historical analysis by retroactively applying new zone assignments.
+
 **Why Airflow over ADF triggers?**
 Airflow DAGs are Python — version-controlled, testable, and support cross-system dependency management that ADF triggers cannot express.
+
 ---
 ## Key Numbers
 | Metric | Value |
