@@ -119,12 +119,16 @@ Two tables built from Silver:
 ---
 ## Orchestration
 Three Airflow DAGs with monthly schedule (0 0 1 * *):
+
 dag_bronze_ingest
  trigger_adf_pipeline → verify_bronze_files
+
 dag_silver_transform
  wait_for_bronze → run_silver_notebook → verify_silver_quality
+
 dag_gold_build
  wait_for_silver → [run_gold_metrics + run_gold_dim] → verify_gold_output
+
 Cross-layer dependency: Silver only runs after Bronze succeeds. Gold only runs after Silver succeeds.
 ---
 ## Key Design Decisions
